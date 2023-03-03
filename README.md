@@ -29,7 +29,7 @@ Create the Domain Controller VM (Windows Server 2022) named DC-1.
 <br />
 
 <p>
-Create the VM (Windows 10) named Client-1. Use the same Resource Group and Vnet that was created in the previous step. 
+Create the Client VM (Windows 10) named Client-1. Use the same Resource Group and Vnet that was created in the previous step. 
 </p>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -61,7 +61,7 @@ Login to Client-1 with Remote Desktop and ping DC-1's private IP address with pi
 <br />
 
 <p>
-Login to the DOmain Controller and enable ICMPv4 in on the local windows firewall.  
+Login to the Domain Controller and enable ICMPv4 in on the local windows firewall.  
 </p>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -165,7 +165,7 @@ Login to the Domain Controller and verify Client-1 shows up in Active Directory 
 <br />
 
 <p>
-Log into Client-1 as avyaktrout.com\jane_admin and open system properties. Click Remote Desktop. Allow "domain users" access to remote desktop. You can now log into Client-1 as a normal, non-administrative user now.  
+Log into Client-1 as avyaktrout.com\jane_admin and open system properties. Click Remote Desktop. Allow "domain users" access to remote desktop. You can now log into Client-1 as a normal, non-administrative user now. Normally you'd want to do this with Group Policy that allows you to change MANY systems at once.  
 </p>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -173,7 +173,7 @@ Log into Client-1 as avyaktrout.com\jane_admin and open system properties. Click
 <br />
 
 <p>
-Log out/close the Remote Desktop connection to DC-1 and log back in as “avyaktrout.com\jane_admin”. Use jane_admin as your admin account from now on. 
+Login to DC-1 as jane_admin. Open PowerShell_ise as an administrator. Create a new File and paste the contents of this script (https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) into it. 
 </p>
 <p>
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
